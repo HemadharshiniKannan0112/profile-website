@@ -3,28 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Profile</title>
+  <meta name="description" content="Personal profile of Hemadharshini Kannan, Civil Engineering graduate and Graduate Trainee at PSIOG Digital.">
+  <title>Hemadharshini Kannan | Profile</title>
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="#hero">Home</a>
-      <a href="#journey">Journey</a>
-      <a href="#interests">Interests</a>
-      <a href="#family">Family</a>
-      <a href="#hobbies">Hobbies</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-brand" href="#hero">Hema</a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#family">Family</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
     </nav>
   </header>
+
   <main>
-    <section id="hero"><h1>My Name</h1></section>
-    <section id="journey"><h2>Professional Journey</h2></section>
-    <section id="interests"><h2>Personal Likings</h2></section>
-    <section id="family"><h2>Family</h2></section>
-    <section id="hobbies"><h2>Hobbies</h2></section>
+    <section id="hero" class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-kicker">Graduate Trainee at PSIOG Digital</p>
+          <h1>Hemadharshini Kannan</h1>
+          <p class="hero-tagline">Building structures, exploring possibilities, and designing my own story.</p>
+          <div class="hero-intro">
+            <p><strong>Hello, I'm Hema!</strong></p>
+            <p>A Civil Engineering graduate currently working as a Graduate Trainee at PSIOG.</p>
+            <p>My journey started with an interest in engineering and construction, grew through practical experiences and technical projects, and eventually expanded into the world of technology.</p>
+            <p>Beyond my professional life, I'm a music enthusiast, movie lover, travel dreamer, aspiring baker and someone who enjoys the little things that make life memorable.</p>
+            <p>I'm constantly learning, growing and creating my own path &ndash; one experience at a time.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#journey">Explore My Journey</a>
+            <a class="btn btn-outline" href="#interests">A Little About Me</a>
+            <a class="btn btn-outline" href="#footer">Get in Touch</a>
+          </div>
+        </div>
+        <!-- Replace this block with the real photo later:
+             <img class="hero-photo" src="images/hero/profile.jpg" alt="Portrait of Hemadharshini Kannan"> -->
+        <div class="hero-photo" role="img" aria-label="Profile photo placeholder for Hemadharshini Kannan">
+          <span class="hero-photo-initials">HK</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey" class="section">
+      <div class="container reveal">
+        <h2>Professional Journey</h2>
+      </div>
+    </section>
+
+    <section id="interests" class="section section-alt">
+      <div class="container reveal">
+        <h2>Personal Likings</h2>
+      </div>
+    </section>
+
+    <section id="family" class="section">
+      <div class="container reveal">
+        <h2>My first home, my forever people.</h2>
+      </div>
+    </section>
+
+    <section id="hobbies" class="section section-alt">
+      <div class="container reveal">
+        <h2>A little glimpse of life beyond work.</h2>
+      </div>
+    </section>
   </main>
-  <footer id="footer"><p>Footer</p></footer>
+
+  <footer id="footer" class="site-footer">
+    <div class="container">
+      <h2>Every story has a next chapter. Let's connect!</h2>
+      <p>&copy; 2026 Hemadharshini Kannan. All rights reserved.</p>
+    </div>
+  </footer>
+
   <script src="js/main.js"></script>
 </body>
 </html>
