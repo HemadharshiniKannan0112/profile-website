@@ -509,3 +509,88 @@ a {
     padding: var(--spacing-md);
   }
 }
+/* Personal likings cards */
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.interest-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: 0 6px 20px var(--color-shadow);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.interest-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px var(--color-shadow);
+}
+
+.interest-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--color-accent-soft), var(--color-accent));
+  color: var(--color-text-inverse);
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-style: italic;
+  transition: opacity var(--transition-speed);
+}
+
+.interest-card:hover .interest-media {
+  opacity: 0.85;
+}
+
+.interest-body {
+  flex: 1;
+  padding: var(--spacing-lg);
+}
+
+.interest-body h3 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.interest-body h4 {
+  margin: var(--spacing-md) 0 var(--spacing-sm);
+  color: var(--color-accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.interest-body ul {
+  margin: 0 0 var(--spacing-md);
+  padding-left: 1.2rem;
+}
+
+.interest-caption {
+  margin: 0;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-family: var(--font-heading);
+  font-style: italic;
+}
+
+@media (max-width: 1024px) {
+  .interest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .interest-grid {
+    grid-template-columns: 1fr;
+  }
+}
