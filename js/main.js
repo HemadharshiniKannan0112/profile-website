@@ -68,4 +68,68 @@
       }
     });
   });
+  
+  const galleryButtons = Array.from(document.querySelectorAll('.gallery-btn'));
+  const lightbox = document.getElementById('lightbox');
+  const stage = document.getElementById('lightbox-stage');
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxText = document.getElementById('lightbox-text');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const closeButton = document.getElementById('lightbox-close');
+  let currentIndex = 0;
+  let lastFocused = null;
+
+  function showItem(index) {
+    currentIndex = (index + galleryButtons.length) % galleryButtons.length;
+    const button = galleryButtons[currentIndex];
+    const media = button.querySelector('.gallery-media').cloneNode(true);
+
+    stage.replaceChildren(media);
+    lightboxTitle.textContent = button.dataset.title || '';
+    lightboxText.textContent = button.dataset.text || '';
+    lightboxCaption.textContent = button.dataset.caption || '';
+  }
+
+  function openLightbox(index) {
+    lastFocused = document.activeElement;
+    showItem(index);
+    lightbox.hidden = false;
+    document.body.classList.add('no-scroll');
+    closeButton.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    document.body.classList.remove('no-scroll');
+    if (lastFocused) {
+      lastFocused.focus();
+    }
+  }
+
+  galleryButtons.forEach((button, index) => {
+    button.addEventListener('click', () => openLightbox(index));
+  });
+
+  closeButton.addEventListener('click', closeLightbox);
+  document.getElementById('lightbox-prev').addEventListener('click', () => showItem(currentIndex - 1));
+  document.getElementById('lightbox-next').addEventListener('click', () => showItem(currentIndex + 1));
+
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (lightbox.hidden) {
+      return;
+    }
+    if (event.key === 'Escape') {
+      closeLightbox();
+    } else if (event.key === 'ArrowLeft') {
+      showItem(currentIndex - 1);
+    } else if (event.key === 'ArrowRight') {
+      showItem(currentIndex + 1);
+    }
+  });
 })();
