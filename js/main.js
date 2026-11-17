@@ -42,4 +42,15 @@
   } else {
     revealItems.forEach((item) => item.classList.add('is-visible'));
   }
+  
+  document.querySelectorAll('.show-more').forEach((button) => {
+    const target = document.getElementById(button.getAttribute('aria-controls'));
+
+    button.addEventListener('click', () => {
+      target.hidden = !target.hidden;
+      const isOpen = !target.hidden;
+      button.setAttribute('aria-expanded', String(isOpen));
+      button.textContent = isOpen ? 'Show less' : 'Show more';
+    });
+  });
 })();
