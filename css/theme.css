@@ -1,24 +1,30 @@
 :root {
   /* Primary Colors */
-  --color-primary: #2f2a26;
-  --color-primary-light: #4a423c;
-  --color-primary-dark: #1f1b18;
+  --color-primary: #d4977c;
+  --color-primary-light: #e6b8a2;
+  --color-primary-dark: #c4826a;
 
   /* Background Colors */
-  --color-bg: #faf6ef;
-  --color-bg-secondary: #f3ece0;
-  --color-bg-card: #fffdf8;
+  --color-bg: #1a1714;
+  --color-bg-secondary: #211d19;
+  --color-bg-card: #2a2521;
 
   /* Text Colors */
-  --color-text: #2f2a26;
-  --color-text-secondary: #6b625a;
-  --color-text-inverse: #ffffff;
+  --color-text: #f1e9df;
+  --color-text-secondary: #b9ab9c;
+  --color-text-inverse: #1a1714;
 
   /* Accent & Borders */
-  --color-accent: #b8654b;
-  --color-accent-soft: #e9d3c8;
-  --color-border: #e4d8c8;
-  --color-shadow: rgba(47, 42, 38, 0.15);
+  --color-accent: #ee9c7f;
+  --color-accent-soft: #4a372e;
+  --color-border: #3a322c;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+
+  /* Family section warm palette */
+  --family-bg: #241d19;
+  --family-card: #2f2621;
+  --family-accent: #f2a68a;
+  --family-accent-soft: #523d32;
 
   /* Typography */
   --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -37,12 +43,6 @@
   --max-width: 1200px;
   --border-radius: 8px;
   --transition-speed: 0.3s;
-  
-  /* Family section warm palette */
-  --family-bg: #fbeee3;
-  --family-card: #fff7ef;
-  --family-accent: #c9775a;
-  --family-accent-soft: #f3d5c3;
 }
 
 /* Section-scoped override: warm palette for #family */
