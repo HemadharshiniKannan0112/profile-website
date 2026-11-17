@@ -53,4 +53,19 @@
       button.textContent = isOpen ? 'Show less' : 'Show more';
     });
   });
+  
+  document.querySelectorAll('.flip-card').forEach((card) => {
+    const flip = () => {
+      const isFlipped = card.classList.toggle('is-flipped');
+      card.setAttribute('aria-pressed', String(isFlipped));
+    };
+
+    card.addEventListener('click', flip);
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        flip();
+      }
+    });
+  });
 })();
