@@ -37,4 +37,18 @@
   --max-width: 1200px;
   --border-radius: 8px;
   --transition-speed: 0.3s;
+  
+  /* Family section warm palette */
+  --family-bg: #fbeee3;
+  --family-card: #fff7ef;
+  --family-accent: #c9775a;
+  --family-accent-soft: #f3d5c3;
+}
+
+/* Section-scoped override: warm palette for #family */
+#family {
+  --color-bg: var(--family-bg);
+  --color-bg-card: var(--family-card);
+  --color-accent: var(--family-accent);
+  --color-accent-soft: var(--family-accent-soft);
 }
