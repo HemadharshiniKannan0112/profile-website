@@ -1,3 +1,4 @@
+
 (function () {
   'use strict';
 
@@ -27,6 +28,7 @@
     { id: 'warm', label: 'Warm', icon: '\uD83C\uDF51' },
     { id: 'dark', label: 'Dark', icon: '\uD83C\uDF19' }
   ];
+
   const THEME_KEY = 'profile-theme';
   const themeToggle = document.getElementById('theme-toggle');
   const themeIcon = document.getElementById('theme-icon');
@@ -36,10 +38,15 @@
   function applyTheme(index) {
     const theme = THEMES[index];
     const next = THEMES[(index + 1) % THEMES.length];
+
     document.documentElement.setAttribute('data-theme', theme.id);
     themeIcon.textContent = theme.icon;
     themeName.textContent = theme.label;
-    themeToggle.setAttribute('aria-label', 'Theme: ' + theme.label + '. Press to switch to ' + next.label);
+
+    themeToggle.setAttribute(
+      'aria-label',
+      'Theme: ' + theme.label + '. Press to switch to ' + next.label
+    );
   }
 
   try {
@@ -59,7 +66,7 @@
     try {
       localStorage.setItem(THEME_KEY, THEMES[themeIndex].id);
     } catch (error) {
-      // Storage may be blocked; the theme still applies for this visit.
+      // Theme still works if browser storage is unavailable.
     }
   });
 
@@ -81,18 +88,50 @@
     revealItems.forEach((item) => item.classList.add('is-visible'));
   }
 
-  /* ---------- Show more ---------- */
+  /* ---------- Journey: Show more / Show less ---------- */
   document.querySelectorAll('.show-more').forEach((button) => {
-    const target = document.getElementById(button.getAttribute('aria-controls'));
+    const target = document.getElementById(
+      button.getAttribute('aria-controls')
+    );
+
+    if (!target) return;
 
     button.addEventListener('click', () => {
       target.hidden = !target.hidden;
-      button.setAttribute('aria-expanded', String(!target.hidden));
+
+      button.setAttribute(
+        'aria-expanded',
+        String(!target.hidden)
+      );
+
       button.textContent = target.hidden ? 'Show more' : 'Show less';
     });
   });
 
-  /* ---------- Flip cards ---------- */
+  /* ---------- Personal Likings: Inline photo gallery ---------- */
+  document.querySelectorAll('.interest-toggle').forEach((button) => {
+    const card = button.closest('.interest-card');
+    const extraPhotos = card
+      ? card.querySelector('.interest-extra')
+      : null;
+
+    if (!extraPhotos) return;
+
+    button.addEventListener('click', () => {
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+      extraPhotos.hidden = isExpanded;
+
+      button.setAttribute(
+        'aria-expanded',
+        String(!isExpanded)
+      );
+
+      button.textContent = isExpanded ? 'Show More' : 'Show Less';
+    });
+  });
+
+  /* ---------- Family: Flip cards ---------- */
   document.querySelectorAll('.flip-card').forEach((card) => {
     const flip = () => {
       const isFlipped = card.classList.toggle('is-flipped');
@@ -100,6 +139,7 @@
     };
 
     card.addEventListener('click', flip);
+
     card.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
@@ -108,66 +148,62 @@
     });
   });
 
-  /* ---------- Interest picture pop-ups ---------- */
+  /* ---------- Hobby lightbox ---------- */
   let openPopup = null;
   let popupOpener = null;
 
+  const lightbox = document.getElementById('lightbox');
+  const stage = document.getElementById('lightbox-stage');
+  const lightboxTitle = document.getElementById('lightbox-title');
+
   function closePopup() {
-    if (!openPopup) {
-      return;
-    }
+    if (!openPopup) return;
 
     openPopup.hidden = true;
     document.body.style.overflow = '';
+
     openPopup = null;
 
     if (popupOpener) {
       popupOpener.focus();
+      popupOpener = null;
     }
   }
 
   function showPopup(popup, opener) {
+    if (!popup) return;
+
     popupOpener = opener;
     openPopup = popup;
+
     popup.hidden = false;
     document.body.style.overflow = 'hidden';
-    const close = popup.querySelector('.modal-close, .lightbox-close');
 
-    if (close) {
-      close.focus();
+    const closeButton = popup.querySelector('.lightbox-close');
+
+    if (closeButton) {
+      closeButton.focus();
     }
   }
 
-  document.querySelectorAll('[data-modal]').forEach((button) => {
-    button.addEventListener('click', () => {
-      showPopup(document.getElementById(button.dataset.modal), button);
-    });
-  });
+  /* ---------- Hobby gallery navigation ---------- */
+  const galleryButtons = Array.from(
+    document.querySelectorAll('.gallery-btn')
+  );
 
-  document.querySelectorAll('.modal-close').forEach((button) => {
-    button.addEventListener('click', closePopup);
-  });
-
-  document.querySelectorAll('.modal').forEach((popup) => {
-    popup.addEventListener('click', (event) => {
-      if (event.target === popup) {
-        closePopup();
-      }
-    });
-  });
-
-  /* ---------- Hobby lightbox ---------- */
-  const galleryButtons = Array.from(document.querySelectorAll('.gallery-btn'));
-  const lightbox = document.getElementById('lightbox');
-  const stage = document.getElementById('lightbox-stage');
-  const lightboxTitle = document.getElementById('lightbox-title');
   let currentIndex = 0;
 
   function showItem(index) {
-    currentIndex = (index + galleryButtons.length) % galleryButtons.length;
-    const button = galleryButtons[currentIndex];
+    if (galleryButtons.length === 0) return;
 
-    stage.replaceChildren(button.querySelector('img').cloneNode(true));
+    currentIndex = (index + galleryButtons.length) % galleryButtons.length;
+
+    const button = galleryButtons[currentIndex];
+    const image = button.querySelector('img');
+
+    if (!image) return;
+
+    stage.replaceChildren(image.cloneNode(true));
     lightboxTitle.textContent = button.dataset.title || '';
   }
 
@@ -178,14 +214,38 @@
     });
   });
 
-  document.getElementById('lightbox-close').addEventListener('click', closePopup);
-  document.getElementById('lightbox-prev').addEventListener('click', () => showItem(currentIndex - 1));
-  document.getElementById('lightbox-next').addEventListener('click', () => showItem(currentIndex + 1));
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
 
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closePopup);
+  }
+
+  if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', () => {
+      showItem(currentIndex - 1);
+    });
+  }
+
+  if (lightboxNext) {
+    lightboxNext.addEventListener('click', () => {
+      showItem(currentIndex + 1);
+    });
+  }
+
+  /* ---------- Close lightbox on outside click ---------- */
+  document.querySelectorAll('.modal').forEach((popup) => {
+    popup.addEventListener('click', (event) => {
+      if (event.target === popup) {
+        closePopup();
+      }
+    });
+  });
+
+  /* ---------- Lightbox keyboard controls ---------- */
   document.addEventListener('keydown', (event) => {
-    if (!openPopup) {
-      return;
-    }
+    if (!openPopup) return;
 
     if (event.key === 'Escape') {
       closePopup();
@@ -196,17 +256,25 @@
     }
   });
 
-  /* ---------- More of me feed (photos and short videos) ---------- */
+  /* ---------- Optional More of Me feed ---------- */
   const feed = document.getElementById('feed');
 
   if (feed) {
     const slides = Array.from(feed.querySelectorAll('.feed-slide'));
     const count = document.getElementById('feed-count');
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prevButton = document.getElementById('feed-prev');
+    const nextButton = document.getElementById('feed-next');
+
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
     let feedIndex = 0;
     let timer = null;
 
     function showSlide(index) {
+      if (slides.length === 0) return;
+
       feedIndex = (index + slides.length) % slides.length;
 
       slides.forEach((slide, position) => {
@@ -224,7 +292,9 @@
         }
       });
 
-      count.textContent = (feedIndex + 1) + ' / ' + slides.length;
+      if (count) {
+        count.textContent = (feedIndex + 1) + ' / ' + slides.length;
+      }
     }
 
     function stopFeed() {
@@ -237,20 +307,26 @@
     function startFeed() {
       stopFeed();
 
-      if (!reduceMotion) {
-        timer = setInterval(() => showSlide(feedIndex + 1), 4500);
+      if (!reduceMotion && slides.length > 1) {
+        timer = setInterval(() => {
+          showSlide(feedIndex + 1);
+        }, 4500);
       }
     }
 
-    document.getElementById('feed-prev').addEventListener('click', () => {
-      showSlide(feedIndex - 1);
-      startFeed();
-    });
+    if (prevButton) {
+      prevButton.addEventListener('click', () => {
+        showSlide(feedIndex - 1);
+        startFeed();
+      });
+    }
 
-    document.getElementById('feed-next').addEventListener('click', () => {
-      showSlide(feedIndex + 1);
-      startFeed();
-    });
+    if (nextButton) {
+      nextButton.addEventListener('click', () => {
+        showSlide(feedIndex + 1);
+        startFeed();
+      });
+    }
 
     feed.addEventListener('mouseenter', stopFeed);
     feed.addEventListener('mouseleave', startFeed);
@@ -267,4 +343,5 @@
   if (yearElement) {
     yearElement.textContent = String(new Date().getFullYear());
   }
+
 })();

@@ -18,17 +18,7 @@ body {
   background: var(--color-bg);
 }
 
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background-image: url("../images/hero/background.png");
-  background-size: 240px 240px;
-  opacity: var(--bg-pattern-opacity);
-  filter: var(--bg-pattern-filter);
-}
+
 
 h1,
 h2,
@@ -199,13 +189,23 @@ img {
 }
 
 /* Hero */
-.hero {
-  display: flex;
-  align-items: center;
-  min-height: calc(100vh - 5rem);
-  padding: var(--spacing-xl) var(--spacing-md);
-  background: var(--gradient-hero);
+
+.hero-hello {
+  margin-bottom: 0.5rem;
+  color: var(--color-accent);
+  font-family: 'Segoe Script', 'Brush Script MT', cursive;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600;
 }
+
+.hero h1 {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: clamp(2.3rem, 5vw, 3.8rem);
+  letter-spacing: 0.015em;
+  line-height: 1.15;
+  text-transform: none;
+}
+
 
 .hero-inner {
   display: grid;
@@ -467,6 +467,7 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-lg);
+  align-items: start;
 }
 
 .interest-card {
@@ -525,6 +526,18 @@ img {
 
 .interest-btn {
   align-self: flex-start;
+}
+.interest-card {
+  align-self: start;
+  height: fit-content;
+}
+
+.interest-body {
+  flex: initial;
+}
+
+.interest-caption {
+  flex: initial;
 }
 
 /* Pop-ups (interest pictures and hobby lightbox) */
@@ -598,12 +611,12 @@ img {
 .family-photo {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  margin: var(--spacing-lg) 0;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 28px var(--color-shadow);
-  object-fit: cover;
-  object-position: center 35%;
+  margin: var(--spacing-lg) auto;
 }
 
 .family-grid {
@@ -1050,4 +1063,101 @@ img {
   .theme-name {
     display: none;
   }
+}
+
+/* =========================================
+   PERSONAL LIKINGS - INLINE PHOTO GALLERY
+========================================= */
+
+.interest-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+  width: 100%;
+}
+
+.interest-photos img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px var(--color-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interest-photos img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 18px var(--color-shadow);
+}
+
+/* Show additional photos only when expanded */
+.interest-extra {
+  display: contents;
+}
+
+.interest-extra[hidden] {
+  display: none;
+}
+
+/* Show More / Show Less button */
+.interest-toggle {
+  align-self: flex-start;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.interest-toggle:hover {
+  transform: translateY(-2px);
+}
+
+/* Keep images neat on tablets */
+@media (max-width: 900px) {
+  .interest-photos img {
+    height: 170px;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 640px) {
+  .interest-photos {
+    gap: 10px;
+  }
+
+  .interest-photos img {
+    height: 150px;
+  }
+}
+/* HK Personal Logo */
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--color-accent);
+  border-radius: 15px;
+  background: var(--gradient-accent);
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -2px;
+  box-shadow: 0 4px 12px var(--color-shadow);
+  transition: transform 0.3s ease;
+}
+
+.nav-brand:hover .brand-logo {
+  transform: rotate(-8deg) scale(1.08);
 }
