@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,19 +12,21 @@
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="nav-brand" href="#hero">Hema</a>
+      <a class="nav-brand" href="#hero" aria-label="Hemadharshini Kannan - Home">
+  <span class="brand-logo">HK</span>
+</a>
       <ul class="nav-menu" id="nav-menu">
         <li><a href="#hero"><span class="nav-icon" aria-hidden="true">🏠</span>Home</a></li>
         <li><a href="#journey"><span class="nav-icon" aria-hidden="true">🧭</span>Journey</a></li>
         <li><a href="#interests"><span class="nav-icon" aria-hidden="true">✨</span>Interests</a></li>
         <li><a href="#family"><span class="nav-icon" aria-hidden="true">👨‍👩‍👧</span>Family</a></li>
         <li><a href="#hobbies"><span class="nav-icon" aria-hidden="true">🎨</span>Hobbies</a></li>
-        <li><a href="#more"><span class="nav-icon" aria-hidden="true">📸</span>More of Me</a></li>
         <li><a href="#footer"><span class="nav-icon" aria-hidden="true">✉️</span>Contact</a></li>
       </ul>
       <div class="nav-actions">
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Change theme">
-          <span id="theme-icon" aria-hidden="true">🌸</span><span class="theme-name" id="theme-name">Lilac</span>
+          <span id="theme-icon" aria-hidden="true">🌸</span>
+          <span class="theme-name" id="theme-name">Lilac</span>
         </button>
         <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
           <span class="nav-toggle-bar"></span>
@@ -35,29 +38,39 @@
   </header>
 
   <main>
+
+    <!-- Hero Section -->
     <section id="hero" class="hero">
       <div class="hero-inner">
         <div class="hero-text">
-          <p class="hero-hello">Hello, I'm Hema!</p>
+          <p class="hero-hello">Hey there, I'm Hema! 💜</p>
           <h1>Hemadharshini Kannan</h1>
           <p class="hero-kicker">Graduate Trainee at PSIOG Digital</p>
-          <p class="hero-intro">A Civil Engineering graduate whose journey started on construction sites and grew into the world of technology. Beyond work, I'm a music enthusiast, movie lover, travel dreamer and aspiring baker, constantly learning and creating my own path, one experience at a time.</p>
+
+          <p class="hero-intro">
+            A Civil Engineering graduate currently making her way in the IT industry as a Graduate Trainee at PSIOG Digital.
+            Surprised? Yes, you read that right! Sometimes, curiosity takes you places you never expected, and that's exactly how my journey into technology began.
+            Here's to new beginnings, endless learning, and exciting possibilities!
+          </p>
+
           <div class="sticker-row">
             <span class="sticker">🏗️ Civil Engineer</span>
             <span class="sticker">💻 Graduate Trainee</span>
             <span class="sticker">🎨 Art Lover</span>
-            <span class="sticker">🍰 Aspiring Baker</span>
           </div>
+
           <div class="hero-actions">
             <a class="btn btn-primary" href="#journey">Explore My Journey</a>
             <a class="btn btn-outline" href="#interests">A Little About Me</a>
             <a class="btn btn-outline" href="#footer">Get in Touch</a>
           </div>
         </div>
+
         <img class="hero-photo" src="images/hero/profile.jpg" alt="Portrait of Hemadharshini Kannan" width="960" height="1200">
       </div>
     </section>
 
+    <!-- Professional Journey -->
     <section id="journey" class="section">
       <div class="container">
         <h2 class="section-title reveal">Professional Journey</h2>
@@ -66,11 +79,27 @@
           <li class="timeline-item reveal">
             <article class="timeline-card">
               <p class="timeline-date">2022 &ndash; 2026</p>
-              <h3>B.E. Civil Engineering</h3>
+              <h3>B.E. Civil Engineering (Honours)</h3>
               <p class="timeline-org">Sri Krishna College of Technology, Coimbatore</p>
-              <p>CGPA 9.25 with First Class with Distinction, first rank in the first and second years, and Best Outgoing Student of the Civil Engineering Department.</p>
+
+              <p>
+                My engineering journey helped me develop a strong academic foundation
+                in civil engineering, structural concepts, construction practices,
+                and problem-solving.
+              </p>
+
+              <p class="timeline-org">Academic Excellence</p>
+              <ul>
+                <li>Academic Topper &ndash; All Four Years</li>
+                <li>Best Outgoing Student Award &ndash; Civil Engineering Department</li>
+                <li>CGPA 9.25 &ndash; First Class with Distinction</li>
+              </ul>
+
               <div class="photo-row">
-                <figure class="polaroid"><img src="images/journey/college-award.jpg" alt="Receiving the Best Outgoing Student award" loading="lazy"><figcaption>Best Outgoing Student</figcaption></figure>
+                <figure class="polaroid">
+                  <img src="images/journey/college-award.jpg" alt="Receiving the Best Outgoing Student award" loading="lazy">
+                  <figcaption>Best Outgoing Student Award</figcaption>
+                </figure>
               </div>
             </article>
           </li>
@@ -81,9 +110,16 @@
               <h3>Structural Design Intern</h3>
               <p class="timeline-org">Arrow Structures</p>
               <p>Explored structural design workflows, engineering drawings and design documentation beyond the textbook.</p>
+
               <div class="photo-row">
-                <figure class="polaroid"><img src="images/journey/arrow-structures-1.jpg" alt="At Arrow Structures" loading="lazy"><figcaption>Arrow Structures</figcaption></figure>
-                <figure class="polaroid"><img src="images/journey/arrow-structures-2.jpg" alt="Working at Arrow Structures" loading="lazy"><figcaption>Design days</figcaption></figure>
+                <figure class="polaroid">
+                  <img src="images/journey/arrow-structures-1.jpg" alt="At Arrow Structures" loading="lazy">
+                  <figcaption>Arrow Structures</figcaption>
+                </figure>
+                <figure class="polaroid">
+                  <img src="images/journey/arrow-structures-2.jpg" alt="Working at Arrow Structures" loading="lazy">
+                  <figcaption>Design days</figcaption>
+                </figure>
               </div>
             </article>
           </li>
@@ -93,11 +129,19 @@
               <p class="timeline-date">Internship</p>
               <h3>Civil Engineering Intern</h3>
               <p class="timeline-org">Public Works Department, Coimbatore</p>
-              <p>Site exposure to large public projects, including the Periyar Arivulagam, a court building and the G+8 Grand Library and Science Centre.</p>
+              <p>Site exposure to large public projects, including the Periyar Arivulagam, the G+8 Grand Library and Science Centre and court building.</p>
+
               <div class="photo-row">
-                <figure class="polaroid"><img src="images/journey/pwd-1.jpg" alt="On site at the Public Works Department" loading="lazy"><figcaption>On site</figcaption></figure>
-                <figure class="polaroid"><img src="images/journey/pwd-2.jpg" alt="PWD construction site visit" loading="lazy"><figcaption>PWD Coimbatore</figcaption></figure>
+                <figure class="polaroid">
+                  <img src="images/journey/pwd-1.jpg" alt="On site at the Public Works Department" loading="lazy">
+                  <figcaption>On site</figcaption>
+                </figure>
+                <figure class="polaroid">
+                  <img src="images/journey/pwd-2.jpg" alt="PWD construction site visit" loading="lazy">
+                  <figcaption>PWD Coimbatore</figcaption>
+                </figure>
               </div>
+
               <div class="timeline-more" id="more-pwd" hidden>
                 <ul>
                   <li>Cement, water and aggregate testing</li>
@@ -116,9 +160,14 @@
               <h3>Crack Detection Using Deep Learning</h3>
               <p class="timeline-org">Concrete pavements, image processing</p>
               <p>Detects and classifies pavement cracks and predicts their severity, combining civil engineering with artificial intelligence.</p>
+
               <div class="photo-row">
-                <figure class="polaroid"><div class="photo-ph">Photo coming soon</div><figcaption>Project</figcaption></figure>
+                <figure class="polaroid">
+                  <img src="images/journey/Journey_Final_Year_Project.jpeg" alt="Final year civil engineering project" loading="lazy">
+                  <figcaption>Final Year Project</figcaption>
+                </figure>
               </div>
+
               <div class="timeline-more" id="more-project" hidden>
                 <ul class="chip-list">
                   <li class="chip">Python</li>
@@ -139,8 +188,12 @@
               <h3>Graduate Trainee</h3>
               <p class="timeline-org">PSIOG Digital</p>
               <p>Strengthening my technical foundation and learning how professional teams solve real-world problems.</p>
+
               <div class="photo-row">
-                <figure class="polaroid"><div class="photo-ph">Photo coming soon</div><figcaption>PSIOG</figcaption></figure>
+                <figure class="polaroid">
+                  <img src="images/journey/Journey_Psiog.jpeg" alt="My journey at PSIOG Digital" loading="lazy">
+                  <figcaption>My Journey at PSIOG Digital</figcaption>
+                </figure>
               </div>
             </article>
           </li>
@@ -149,14 +202,20 @@
       </div>
     </section>
 
+    <!-- Personal Likings -->
     <section id="interests" class="section section-alt">
       <div class="container">
         <h2 class="section-title reveal">Personal Likings</h2>
-        <p class="section-sub reveal">Tap View pictures on a card to see my favourites.</p>
+        <p class="section-sub reveal">A little collection of things I love, enjoy and always come back to.</p>
+
         <div class="interest-grid">
 
+          <!-- Music -->
           <article class="interest-card reveal">
-            <div class="interest-top"><span class="interest-emoji" aria-hidden="true">🎵</span><h3>Music</h3></div>
+            <div class="interest-top">
+              <span class="interest-emoji" aria-hidden="true">🎵</span>
+              <h3>Music</h3>
+            </div>
             <div class="interest-body">
               <ul>
                 <li>Anirudh Ravichander</li>
@@ -164,12 +223,24 @@
                 <li>Yuvan Shankar Raja</li>
               </ul>
               <p class="interest-caption">My mood has a playlist of its own. From Anirudh energy to Yuvan nostalgia, there's always a song playing somewhere.</p>
-              <button class="btn btn-outline interest-btn" type="button" data-modal="modal-music">View pictures</button>
+
+              <div class="interest-photos">
+                <img src="images/interests/music-anirudh.jpg" alt="Anirudh Ravichander" loading="lazy">
+                <img src="images/interests/music-sai-abhyankkar.jpg" alt="Sai Abhyankkar" loading="lazy">
+                <div class="interest-extra" hidden>
+                  <img src="images/interests/music-yuvan.jpg" alt="Yuvan Shankar Raja" loading="lazy">
+                </div>
+              </div>
+              <button class="btn btn-outline interest-toggle" type="button" aria-expanded="false">Show More</button>
             </div>
           </article>
 
+          <!-- Movies -->
           <article class="interest-card reveal">
-            <div class="interest-top"><span class="interest-emoji" aria-hidden="true">🎬</span><h3>Movies</h3></div>
+            <div class="interest-top">
+              <span class="interest-emoji" aria-hidden="true">🎬</span>
+              <h3>Movies</h3>
+            </div>
             <div class="interest-body">
               <ul>
                 <li>Paiyaa</li>
@@ -178,12 +249,24 @@
                 <li>Ghilli</li>
               </ul>
               <p class="interest-caption">Romance, comedy, nostalgia and a little cinematic drama. Basically, my kind of entertainment.</p>
-              <button class="btn btn-outline interest-btn" type="button" data-modal="modal-movies">View pictures</button>
+
+              <div class="interest-photos">
+                <img src="images/interests/movie-paiyaa.jpg" alt="Paiyaa" loading="lazy">
+                <img src="images/interests/movie-ghilli.jpg" alt="Ghilli" loading="lazy">
+                <div class="interest-extra" hidden>
+                  <img src="images/interests/movie-10-days.jpg" alt="How to Lose a Guy in 10 Days" loading="lazy">
+                </div>
+              </div>
+              <button class="btn btn-outline interest-toggle" type="button" aria-expanded="false">Show More</button>
             </div>
           </article>
 
+          <!-- Series -->
           <article class="interest-card reveal">
-            <div class="interest-top"><span class="interest-emoji" aria-hidden="true">📺</span><h3>Series</h3></div>
+            <div class="interest-top">
+              <span class="interest-emoji" aria-hidden="true">📺</span>
+              <h3>Series</h3>
+            </div>
             <div class="interest-body">
               <ul>
                 <li>Bridgerton</li>
@@ -192,24 +275,50 @@
                 <li>The Summer I Turned Pretty</li>
               </ul>
               <p class="interest-caption">Always one more episode before bed.</p>
-              <button class="btn btn-outline interest-btn" type="button" data-modal="modal-series">View pictures</button>
+
+              <div class="interest-photos">
+                <img src="images/interests/series-bridgerton.jpg" alt="Bridgerton" loading="lazy">
+                <img src="images/interests/series-money-heist.jpg" alt="Money Heist" loading="lazy">
+                <div class="interest-extra" hidden>
+                  <img src="images/interests/series-stranger-things.jpg" alt="Stranger Things" loading="lazy">
+                  <img src="images/interests/series-summer.jpg" alt="The Summer I Turned Pretty" loading="lazy">
+                </div>
+              </div>
+              <button class="btn btn-outline interest-toggle" type="button" aria-expanded="false">Show More</button>
             </div>
           </article>
 
+          <!-- Food -->
           <article class="interest-card reveal">
-            <div class="interest-top"><span class="interest-emoji" aria-hidden="true">🍽️</span><h3>Food</h3></div>
+            <div class="interest-top">
+              <span class="interest-emoji" aria-hidden="true">🍽️</span>
+              <h3>Food</h3>
+            </div>
             <div class="interest-body">
               <ul>
                 <li>Indian and Chinese cuisines</li>
                 <li>Biryani, Paruppu Sadham, chicken dishes, pasta</li>
               </ul>
               <p class="interest-caption">I can appreciate a fancy meal, but a good plate of biryani will always have my heart.</p>
-              <button class="btn btn-outline interest-btn" type="button" data-modal="modal-food">View pictures</button>
+
+              <div class="interest-photos">
+                <img src="images/interests/food-cake.jpg" alt="Cheesecake" loading="lazy">
+                <img src="images/interests/food-prawns.jpg" alt="Grilled prawns" loading="lazy">
+                <div class="interest-extra" hidden>
+                  <img src="images/interests/food-indian.jpg" alt="Indian food" loading="lazy">
+                  <img src="images/interests/food-me.jpg" alt="Food made by me" loading="lazy">
+                </div>
+              </div>
+              <button class="btn btn-outline interest-toggle" type="button" aria-expanded="false">Show More</button>
             </div>
           </article>
 
+          <!-- Books -->
           <article class="interest-card reveal">
-            <div class="interest-top"><span class="interest-emoji" aria-hidden="true">📚</span><h3>Books</h3></div>
+            <div class="interest-top">
+              <span class="interest-emoji" aria-hidden="true">📚</span>
+              <h3>Books</h3>
+            </div>
             <div class="interest-body">
               <ul>
                 <li>Harry Potter</li>
@@ -217,12 +326,24 @@
                 <li>The Fault in Our Stars</li>
               </ul>
               <p class="interest-caption">Some stories are read, some are experienced, and some stay with you long after the last page.</p>
-              <button class="btn btn-outline interest-btn" type="button" data-modal="modal-books">View pictures</button>
+
+              <div class="interest-photos">
+                <img src="images/interests/book-harry-potter.jpg" alt="Harry Potter" loading="lazy">
+                <img src="images/interests/book-it-ends-with-us.jpg" alt="It Ends With Us" loading="lazy">
+                <div class="interest-extra" hidden>
+                  <img src="images/interests/book-fault-in-our-stars.jpg" alt="The Fault in Our Stars" loading="lazy">
+                </div>
+              </div>
+              <button class="btn btn-outline interest-toggle" type="button" aria-expanded="false">Show More</button>
             </div>
           </article>
 
+          <!-- Travel -->
           <article class="interest-card reveal">
-            <div class="interest-top"><span class="interest-emoji" aria-hidden="true">✈️</span><h3>Travel</h3></div>
+            <div class="interest-top">
+              <span class="interest-emoji" aria-hidden="true">✈️</span>
+              <h3>Travel</h3>
+            </div>
             <div class="interest-body">
               <ul>
                 <li>New York City</li>
@@ -230,6 +351,15 @@
                 <li>Paris</li>
               </ul>
               <p class="interest-caption">I don't just want to visit places. I want to collect experiences, memories and stories.</p>
+
+              <div class="interest-photos">
+                <img src="images/interests/travel/Travel_NYC.jpeg" alt="New York City" loading="lazy">
+                <img src="images/interests/travel/Travel_Kashmir.jpeg" alt="Kashmir" loading="lazy">
+                <div class="interest-extra" hidden>
+                  <img src="images/interests/travel/Travel_Paris.jpeg" alt="Paris" loading="lazy">
+                </div>
+              </div>
+              <button class="btn btn-outline interest-toggle" type="button" aria-expanded="false">Show More</button>
             </div>
           </article>
 
@@ -237,10 +367,12 @@
       </div>
     </section>
 
+    <!-- Family -->
     <section id="family" class="section">
       <div class="container">
         <h2 class="section-title reveal">My first home, my forever people.</h2>
         <p class="section-sub reveal">Behind every version of me are the people who have been part of my story from the beginning. My family is my constant, my comfort zone and one of the biggest reasons I keep moving forward.</p>
+
         <img class="family-photo reveal" src="images/family/family-group.jpg" alt="Family group photo" loading="lazy">
 
         <div class="family-grid">
@@ -248,7 +380,10 @@
             <div class="flip-inner">
               <div class="flip-front">
                 <img class="flip-photo" src="images/family/parents.jpg" alt="My parents" loading="lazy">
-                <div class="flip-caption"><h3>My Parents</h3><p class="flip-label">My Superheroes</p></div>
+                <div class="flip-caption">
+                  <h3>My Parents</h3>
+                  <p class="flip-label">My Superheroes</p>
+                </div>
               </div>
               <div class="flip-back">
                 <h3>My Dad and Mom</h3>
@@ -261,7 +396,10 @@
             <div class="flip-inner">
               <div class="flip-front">
                 <img class="flip-photo" src="images/family/sister.jpg" alt="My sister" loading="lazy">
-                <div class="flip-caption"><h3>My Sister</h3><p class="flip-label">My Inspiration</p></div>
+                <div class="flip-caption">
+                  <h3>My Sister</h3>
+                  <p class="flip-label">My Inspiration</p>
+                </div>
               </div>
               <div class="flip-back">
                 <h3>My Sister</h3>
@@ -275,55 +413,78 @@
       </div>
     </section>
 
+    <!-- Hobbies -->
     <section id="hobbies" class="section section-alt">
       <div class="container">
         <h2 class="section-title reveal">My Free-Time Canvas</h2>
         <p class="section-sub reveal">Colours, petals and a little clay: what my hands love doing when work is done. Tap any picture to enlarge it.</p>
+
         <ul class="gallery">
-          <li class="gallery-item reveal"><button class="gallery-btn" type="button" data-title="Krishna silhouette painting"><img src="images/hobbies/art-krishna.jpg" alt="Krishna silhouette painting" loading="lazy"></button></li>
-          <li class="gallery-item reveal"><button class="gallery-btn" type="button" data-title="Peacock painting"><img src="images/hobbies/art-peacock.jpg" alt="Peacock painting" loading="lazy"></button></li>
-          <li class="gallery-item reveal"><button class="gallery-btn" type="button" data-title="Bird painting"><img src="images/hobbies/art-bird.jpg" alt="Bird painting" loading="lazy"></button></li>
-          <li class="gallery-item reveal"><button class="gallery-btn" type="button" data-title="Lotus painting on wood"><img src="images/hobbies/art-lotus.jpg" alt="Lotus painting on wood" loading="lazy"></button></li>
-          <li class="gallery-item reveal"><button class="gallery-btn" type="button" data-title="Flower art made with shells"><img src="images/hobbies/art-shell.jpg" alt="Flower art made with shells" loading="lazy"></button></li>
-          <li class="gallery-item reveal"><button class="gallery-btn" type="button" data-title="Onam pookalam 1"><img src="images/hobbies/art-onam-1.jpg" alt="Onam pookalam flower design 1" loading="lazy"></button></li>
-          <li class="gallery-item reveal"><button class="gallery-btn" type="button" data-title="Onam pookalam 2"><img src="images/hobbies/art-onam-2.jpg" alt="Onam pookalam flower design 2" loading="lazy"></button></li>
-          <li class="gallery-item reveal"><button class="gallery-btn" type="button" data-title="Onam pookalam 3"><img src="images/hobbies/art-onam-3.jpg" alt="Onam pookalam flower design 3" loading="lazy"></button></li>
-          <li class="gallery-item reveal"><button class="gallery-btn" type="button" data-title="Clay art"><img src="images/hobbies/art-clay.jpg" alt="Clay art" loading="lazy"></button></li>
+          <li class="gallery-item reveal">
+            <button class="gallery-btn" type="button" data-title="Krishna silhouette painting">
+              <img src="images/hobbies/art-krishna.jpg" alt="Krishna silhouette painting" loading="lazy">
+            </button>
+          </li>
+          <li class="gallery-item reveal">
+            <button class="gallery-btn" type="button" data-title="Peacock painting">
+              <img src="images/hobbies/art-peacock.jpg" alt="Peacock painting" loading="lazy">
+            </button>
+          </li>
+          <li class="gallery-item reveal">
+            <button class="gallery-btn" type="button" data-title="Bird painting">
+              <img src="images/hobbies/art-bird.jpg" alt="Bird painting" loading="lazy">
+            </button>
+          </li>
+          <li class="gallery-item reveal">
+            <button class="gallery-btn" type="button" data-title="Lotus painting on wood">
+              <img src="images/hobbies/art-lotus.jpg" alt="Lotus painting on wood" loading="lazy">
+            </button>
+          </li>
+          <li class="gallery-item reveal">
+            <button class="gallery-btn" type="button" data-title="Flower art made with shells">
+              <img src="images/hobbies/art-shell.jpg" alt="Flower art made with shells" loading="lazy">
+            </button>
+          </li>
+          <li class="gallery-item reveal">
+            <button class="gallery-btn" type="button" data-title="Onam pookalam 1">
+              <img src="images/hobbies/art-onam-1.jpg" alt="Onam pookalam flower design 1" loading="lazy">
+            </button>
+          </li>
+          <li class="gallery-item reveal">
+            <button class="gallery-btn" type="button" data-title="Onam pookalam 2">
+              <img src="images/hobbies/art-onam-2.jpg" alt="Onam pookalam flower design 2" loading="lazy">
+            </button>
+          </li>
+          <li class="gallery-item reveal">
+            <button class="gallery-btn" type="button" data-title="Onam pookalam 3">
+              <img src="images/hobbies/art-onam-3.jpg" alt="Onam pookalam flower design 3" loading="lazy">
+            </button>
+          </li>
+          <li class="gallery-item reveal">
+            <button class="gallery-btn" type="button" data-title="Clay art">
+              <img src="images/hobbies/art-clay.jpg" alt="Clay art" loading="lazy">
+            </button>
+          </li>
         </ul>
       </div>
     </section>
 
-    <section id="more" class="section">
-      <div class="container">
-        <h2 class="section-title reveal">More of Me</h2>
-        <p class="section-sub reveal">A few more glimpses of life, moving along one by one. Use the arrows to go back or forward.</p>
-        <div class="feed" id="feed" role="group" aria-roledescription="carousel" aria-label="More of me">
-          <button class="feed-btn" id="feed-prev" type="button" aria-label="Previous photo">&laquo;</button>
-          <div class="feed-frame">
-            <figure class="feed-slide is-active"><img class="feed-media" src="images/hobbies/gallery-family-1.jpg" alt="Family moments" loading="lazy"><figcaption>Family moments</figcaption></figure>
-            <figure class="feed-slide"><img class="feed-media" src="images/hobbies/gallery-mic.jpg" alt="Speaking on the mic" loading="lazy"><figcaption>On the mic</figcaption></figure>
-            <figure class="feed-slide"><img class="feed-media" src="images/hobbies/gallery-family-2.jpg" alt="Family time" loading="lazy"><figcaption>Family time</figcaption></figure>
-            <figure class="feed-slide"><img class="feed-media" src="images/hobbies/gallery-skit.jpg" alt="Skit memories" loading="lazy"><figcaption>Skit memories</figcaption></figure>
-            <!-- To add a short video, copy this slide above the closing div of feed-frame:
-            <figure class="feed-slide"><video class="feed-media" src="images/hobbies/gallery-video-1.mp4" muted loop playsinline preload="metadata"></video><figcaption>Your caption</figcaption></figure> -->
-          </div>
-          <button class="feed-btn" id="feed-next" type="button" aria-label="Next photo">&raquo;</button>
-        </div>
-        <p class="feed-count" id="feed-count" aria-live="polite">1 / 4</p>
-      </div>
-    </section>
   </main>
 
+  <!-- Footer -->
   <footer id="footer" class="site-footer">
     <div class="container">
       <h2>Every story has a next chapter. Let's connect!</h2>
       <p class="footer-text">I'm always open to learning, meeting new people, exchanging ideas and exploring opportunities. Whether it's a professional conversation, a creative collaboration or simply saying hello, I'd love to connect.</p>
+
       <ul class="footer-links">
         <li><a class="footer-link" href="https://www.linkedin.com/in/hemadharshini0112?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)">LinkedIn</a></li>
         <li><a class="footer-link" href="https://github.com/HemadharshiniKannan0112" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)">GitHub</a></li>
         <li><a class="footer-link" href="mailto:hemadharshini0112@gmail.com" aria-label="Send me an email">Email</a></li>
       </ul>
+
       <a class="back-to-top" href="#hero">&uarr; Back to top</a>
+
       <div class="footer-bottom">
         <p>&copy; <span id="year">2026</span> Hemadharshini Kannan. All rights reserved.</p>
         <p class="footer-signature">Made with curiosity, creativity and a little bit of coffee.</p>
@@ -331,68 +492,7 @@
     </div>
   </footer>
 
-  <div class="modal" id="modal-music" role="dialog" aria-modal="true" aria-labelledby="modal-music-title" hidden>
-    <div class="modal-box">
-      <button class="modal-close" type="button" aria-label="Close pictures">&times;</button>
-      <h3 id="modal-music-title">Music</h3>
-      <div class="modal-grid modal-grid-posters">
-        <figure><img src="images/interests/music-anirudh.jpg" alt="Anirudh Ravichander" loading="lazy"><figcaption>Anirudh Ravichander</figcaption></figure>
-        <figure><img src="images/interests/music-sai-abhyankkar.jpg" alt="Sai Abhyankkar" loading="lazy"><figcaption>Sai Abhyankkar</figcaption></figure>
-        <figure><img src="images/interests/music-yuvan.jpg" alt="Yuvan Shankar Raja" loading="lazy"><figcaption>Yuvan Shankar Raja</figcaption></figure>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="modal-movies" role="dialog" aria-modal="true" aria-labelledby="modal-movies-title" hidden>
-    <div class="modal-box">
-      <button class="modal-close" type="button" aria-label="Close pictures">&times;</button>
-      <h3 id="modal-movies-title">Movies</h3>
-      <div class="modal-grid modal-grid-posters">
-        <figure><img src="images/interests/movie-paiyaa.jpg" alt="Paiyaa" loading="lazy"><figcaption>Paiyaa</figcaption></figure>
-        <figure><img src="images/interests/movie-ghilli.jpg" alt="Ghilli" loading="lazy"><figcaption>Ghilli</figcaption></figure>
-        <figure><img src="images/interests/movie-10-days.jpg" alt="How to Lose a Guy in 10 Days" loading="lazy"><figcaption>How to Lose a Guy in 10 Days</figcaption></figure>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="modal-series" role="dialog" aria-modal="true" aria-labelledby="modal-series-title" hidden>
-    <div class="modal-box">
-      <button class="modal-close" type="button" aria-label="Close pictures">&times;</button>
-      <h3 id="modal-series-title">Series</h3>
-      <div class="modal-grid modal-grid-posters">
-        <figure><img src="images/interests/series-bridgerton.jpg" alt="Bridgerton" loading="lazy"><figcaption>Bridgerton</figcaption></figure>
-        <figure><img src="images/interests/series-money-heist.jpg" alt="Money Heist" loading="lazy"><figcaption>Money Heist</figcaption></figure>
-        <figure><img src="images/interests/series-stranger-things.jpg" alt="Stranger Things" loading="lazy"><figcaption>Stranger Things</figcaption></figure>
-        <figure><img src="images/interests/series-summer.jpg" alt="The Summer I Turned Pretty" loading="lazy"><figcaption>The Summer I Turned Pretty</figcaption></figure>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="modal-food" role="dialog" aria-modal="true" aria-labelledby="modal-food-title" hidden>
-    <div class="modal-box">
-      <button class="modal-close" type="button" aria-label="Close pictures">&times;</button>
-      <h3 id="modal-food-title">Food</h3>
-      <div class="modal-grid">
-        <figure><img src="images/interests/food-cake.jpg" alt="Cheesecake" loading="lazy"><figcaption>Cheesecake</figcaption></figure>
-        <figure><img src="images/interests/food-prawns.jpg" alt="Grilled prawns" loading="lazy"><figcaption>Grilled prawns</figcaption></figure>
-        <figure><img src="images/interests/food-indian.jpg" alt="Indian food" loading="lazy"><figcaption>Indian favourites</figcaption></figure>
-        <figure><img src="images/interests/food-me.jpg" alt="Food made by me" loading="lazy"><figcaption>Made by me</figcaption></figure>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="modal-books" role="dialog" aria-modal="true" aria-labelledby="modal-books-title" hidden>
-    <div class="modal-box">
-      <button class="modal-close" type="button" aria-label="Close pictures">&times;</button>
-      <h3 id="modal-books-title">Books</h3>
-      <div class="modal-grid modal-grid-posters">
-        <figure><img src="images/interests/book-harry-potter.jpg" alt="Harry Potter" loading="lazy"><figcaption>Harry Potter</figcaption></figure>
-        <figure><img src="images/interests/book-it-ends-with-us.jpg" alt="It Ends With Us" loading="lazy"><figcaption>It Ends With Us</figcaption></figure>
-        <figure><img src="images/interests/book-fault-in-our-stars.jpg" alt="The Fault in Our Stars" loading="lazy"><figcaption>The Fault in Our Stars</figcaption></figure>
-      </div>
-    </div>
-  </div>
-
+  <!-- Hobbies Lightbox: kept for the artwork gallery -->
   <div class="modal lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Picture viewer" hidden>
     <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close picture viewer">&times;</button>
     <button class="lightbox-nav" id="lightbox-prev" type="button" aria-label="Previous picture">&#10094;</button>
