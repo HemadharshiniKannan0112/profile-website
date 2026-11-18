@@ -14,20 +14,18 @@
   --color-accent-soft: #e6d4ff;
   --color-border: #dccbf5;
   --color-shadow: rgba(75, 42, 123, 0.2);
+  --color-overlay: rgba(44, 22, 80, 0.88);
   --gradient-hero: linear-gradient(135deg, #f7f1ff 0%, #ffd9f0 100%);
   --gradient-accent: linear-gradient(135deg, #9b5de5 0%, #f15bb5 100%);
   --gradient-footer: linear-gradient(135deg, #4b2a7b 0%, #9b5de5 100%);
+  --bg-pattern-opacity: 0.07;
+  --bg-pattern-filter: invert(0);
 
   /* Family section palette */
   --family-bg: #fbe9f6;
   --family-card: #fff5fb;
   --family-accent: #e0479e;
   --family-accent-soft: #f9cce6;
-
-  /* Theme switcher swatches (same in every theme) */
-  --swatch-lilac: #9b5de5;
-  --swatch-peach: #ff7a59;
-  --swatch-midnight: #140f1f;
 
   /* Typography */
   --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -49,7 +47,7 @@
   --transition-speed: 0.3s;
 }
 
-:root[data-theme="peach"] {
+:root[data-theme="warm"] {
   --color-primary: #7a3b2e;
   --color-primary-light: #a35a49;
   --color-primary-dark: #4f2219;
@@ -60,20 +58,21 @@
   --color-text-secondary: #8a6459;
   --color-text-inverse: #fff8f3;
   --color-on-gradient: #ffffff;
-  --color-accent: #ff7a59;
+  --color-accent: #e8553a;
   --color-accent-soft: #ffd9c7;
   --color-border: #f5d3c0;
   --color-shadow: rgba(122, 59, 46, 0.2);
+  --color-overlay: rgba(79, 34, 25, 0.88);
   --gradient-hero: linear-gradient(135deg, #fff4ec 0%, #ffd9c7 100%);
   --gradient-accent: linear-gradient(135deg, #ff7a59 0%, #ffb703 100%);
   --gradient-footer: linear-gradient(135deg, #7a3b2e 0%, #ff7a59 100%);
   --family-bg: #ffe9d9;
   --family-card: #fff4ea;
-  --family-accent: #e8553a;
+  --family-accent: #c9462c;
   --family-accent-soft: #ffcdb8;
 }
 
-:root[data-theme="midnight"] {
+:root[data-theme="dark"] {
   --color-primary: #b48cf2;
   --color-primary-light: #cdb0ff;
   --color-primary-dark: #9b6fe0;
@@ -88,9 +87,12 @@
   --color-accent-soft: #3a2a5c;
   --color-border: #3a2d57;
   --color-shadow: rgba(0, 0, 0, 0.55);
+  --color-overlay: rgba(10, 6, 20, 0.92);
   --gradient-hero: linear-gradient(135deg, #140f1f 0%, #2a1650 100%);
   --gradient-accent: linear-gradient(135deg, #8a4fd6 0%, #ff6ec7 100%);
   --gradient-footer: linear-gradient(135deg, #241b3a 0%, #4a2a8a 100%);
+  --bg-pattern-opacity: 0.06;
+  --bg-pattern-filter: invert(1);
   --family-bg: #1c1230;
   --family-card: #281a42;
   --family-accent: #ff7ac8;
