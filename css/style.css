@@ -180,6 +180,7 @@ a {
 .hero-photo {
   width: 100%;
   max-width: 380px;
+  height: auto;
   aspect-ratio: 4 / 5;
   margin: 0 auto;
   border-radius: 190px 190px var(--border-radius) var(--border-radius);
