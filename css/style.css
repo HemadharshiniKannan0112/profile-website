@@ -993,3 +993,139 @@ a {
   font-family: var(--font-heading);
   font-style: italic;
 }
+/* Moodboard look: floating nav, theme dots, textured background */
+body {
+  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.site-header {
+  top: 0.75rem;
+  width: calc(100% - 2rem);
+  max-width: 1100px;
+  margin: 0.75rem auto 0;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-bg-card);
+  box-shadow: 0 10px 30px var(--color-shadow);
+}
+
+.nav {
+  padding: 0.5rem 1.25rem;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.nav-brand {
+  font-family: var(--font-accent);
+  font-size: 1.7rem;
+  font-style: normal;
+}
+
+.nav-menu {
+  gap: var(--spacing-sm);
+}
+
+.nav-menu a {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border-bottom: none;
+  border-radius: 999px;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus-visible {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+.nav-icon {
+  margin-right: 0.4rem;
+}
+
+.theme-switcher {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-bg-secondary);
+}
+
+.theme-btn {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 2px solid var(--color-bg-card);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--color-border);
+  cursor: pointer;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.theme-btn:hover,
+.theme-btn:focus-visible {
+  transform: scale(1.2);
+}
+
+.theme-btn[aria-pressed="true"] {
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+.theme-btn-lilac {
+  background: var(--swatch-lilac);
+}
+
+.theme-btn-peach {
+  background: var(--swatch-peach);
+}
+
+.theme-btn-midnight {
+  background: var(--swatch-midnight);
+}
+
+.hero {
+  background: var(--gradient-hero);
+}
+
+.btn-primary {
+  border-color: transparent;
+  background: var(--gradient-accent);
+  color: var(--color-on-gradient);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.site-footer {
+  background: var(--gradient-footer);
+  color: var(--color-on-gradient);
+}
+
+.footer-text,
+.footer-link,
+.back-to-top,
+.back-to-top:hover,
+.back-to-top:focus-visible,
+.footer-signature {
+  color: var(--color-on-gradient);
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    border-radius: 28px;
+  }
+
+  .nav-menu {
+    top: calc(100% + 0.5rem);
+    border: 1px solid var(--color-border);
+    border-radius: 24px;
+  }
+}
