@@ -11,19 +11,26 @@
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="nav-brand" href="#hero">Hema</a>
+      <div class="nav-left">
+        <div class="theme-switcher" role="group" aria-label="Choose theme">
+          <button class="theme-btn theme-btn-lilac" type="button" data-theme-choice="lilac" aria-label="Lilac theme" aria-pressed="true"></button>
+          <button class="theme-btn theme-btn-peach" type="button" data-theme-choice="peach" aria-label="Peach theme" aria-pressed="false"></button>
+          <button class="theme-btn theme-btn-midnight" type="button" data-theme-choice="midnight" aria-label="Midnight theme" aria-pressed="false"></button>
+        </div>
+        <a class="nav-brand" href="#hero">Hema</a>
+      </div>
       <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
       </button>
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#journey">Journey</a></li>
-        <li><a href="#interests">Interests</a></li>
-        <li><a href="#family">Family</a></li>
-        <li><a href="#hobbies">Hobbies</a></li>
-        <li><a href="#footer">Contact</a></li>
+        <li><a href="#hero"><span class="nav-icon" aria-hidden="true">🏠</span>Home</a></li>
+        <li><a href="#journey"><span class="nav-icon" aria-hidden="true">🧭</span>Journey</a></li>
+        <li><a href="#interests"><span class="nav-icon" aria-hidden="true">✨</span>Interests</a></li>
+        <li><a href="#family"><span class="nav-icon" aria-hidden="true">👨‍👩‍👧</span>Family</a></li>
+        <li><a href="#hobbies"><span class="nav-icon" aria-hidden="true">🎨</span>Hobbies</a></li>
+        <li><a href="#footer"><span class="nav-icon" aria-hidden="true">✉️</span>Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -34,13 +41,12 @@
         <div class="hero-text">
           <p class="hero-kicker">Graduate Trainee at PSIOG Digital</p>
           <h1>Hemadharshini Kannan</h1>
-          <p class="hero-tagline">Building structures, exploring possibilities, and designing my own story.</p>
+          <p class="hero-tagline">Learning new things, loving little moments, living big dreams.</p>
           <div class="hero-intro">
-            <p><strong>Hello, I'm Hema!</strong></p>
-            <p>A Civil Engineering graduate currently working as a Graduate Trainee at PSIOG.</p>
-            <p>My journey started with an interest in engineering and construction, grew through practical experiences and technical projects, and eventually expanded into the world of technology.</p>
-            <p>Beyond my professional life, I'm a music enthusiast, movie lover, travel dreamer, aspiring baker and someone who enjoys the little things that make life memorable.</p>
-            <p>I'm constantly learning, growing and creating my own path &ndash; one experience at a time.</p>
+            <p><strong>Hey there, I'm Hema!</strong></p>
+            <p>A Civil Engineering graduate currently making her way in the IT industry as a Graduate Trainee at PSIOG Digital.</p>
+            <p>Surprised? Yes, you read that right! Sometimes, curiosity takes you places you never expected, and that's exactly how my journey into technology began.</p>
+            <p>Here's to new beginnings, endless learning, and exciting possibilities!</p>
           </div>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#journey">Explore My Journey</a>
@@ -63,19 +69,18 @@
           <li class="timeline-item reveal">
             <article class="timeline-card">
               <p class="timeline-date">2022 &ndash; 2026</p>
-              <h3>B.E. Civil Engineering</h3>
+              <h3>B.E. Civil Engineering (Honours)</h3>
               <p class="timeline-org">Sri Krishna College of Technology, Coimbatore</p>
               <p>My engineering journey helped me develop a strong academic foundation in civil engineering, structural concepts, construction practices and problem-solving.</p>
               <div class="timeline-more" id="more-education" hidden>
                 <h4>Achievements</h4>
                 <ul>
                   <li>CGPA 9.25 &ndash; First Class with Distinction</li>
-                  <li>First rank in first and second years</li>
+                  <li>Department Academic Topper &ndash; 4 Consecutive Years</li>
                   <li>Best Outgoing Student Award &ndash; Civil Engineering Department</li>
                   <li>Placement Coordinator</li>
                   <li>Organised Avantaa 2024</li>
-                  <li>Team Leader in SAP Hackfest Codecrete</li>
-                  <li>Participated in SAP Hackfest 2025 State Hub Round</li>
+                  <li>Team Leader in SAP Hackfest 2025 State Hub Round</li>
                 </ul>
               </div>
               <button class="show-more" type="button" aria-expanded="false" aria-controls="more-education">Show more</button>
@@ -253,6 +258,7 @@
               <ul>
                 <li>Harry Potter</li>
                 <li>It Ends With Us</li>
+                <li>The Fault in our Stars</li>
               </ul>
               <p class="interest-caption">Some stories are read, some are experienced, and some stay with you long after the last page.</p>
             </div>

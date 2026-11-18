@@ -138,4 +138,42 @@
   if (yearElement) {
     yearElement.textContent = String(new Date().getFullYear());
   }
+  
+  const THEMES = ['lilac', 'peach', 'midnight'];
+  const THEME_KEY = 'profile-theme';
+  const themeButtons = document.querySelectorAll('.theme-btn');
+
+  function applyTheme(name) {
+    document.documentElement.setAttribute('data-theme', name);
+    themeButtons.forEach((button) => {
+      button.setAttribute('aria-pressed', String(button.dataset.themeChoice === name));
+    });
+  }
+
+  let startTheme = 'lilac';
+
+  try {
+    startTheme = localStorage.getItem(THEME_KEY) || 'lilac';
+  } catch (error) {
+    startTheme = 'lilac';
+  }
+
+  if (!THEMES.includes(startTheme)) {
+    startTheme = 'lilac';
+  }
+
+  applyTheme(startTheme);
+
+  themeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const name = button.dataset.themeChoice;
+      applyTheme(name);
+
+      try {
+        localStorage.setItem(THEME_KEY, name);
+      } catch (error) {
+        // Storage may be blocked; the theme still applies for this visit.
+      }
+    });
+  });
 })();
